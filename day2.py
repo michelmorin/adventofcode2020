@@ -21,7 +21,7 @@ for line in Lines:
     else:
         wrongNumPasswords += 1
 
-print("Day2 Part 1", correctNumPasswords, wrongNumPasswords)
+print("Part 1 - Number of Correct Password", correctNumPasswords)
 
 correctNumPasswords = 0
 wrongNumPasswords = 0
@@ -44,4 +44,4 @@ for line in Lines:
     else:
         wrongNumPasswords += 1
 
-print("Day2 part 2", correctNumPasswords, wrongNumPasswords)
+print("Part 2 - Number of Correct Password", correctNumPasswords)

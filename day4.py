@@ -2,8 +2,6 @@ file1 = open('input4.txt', 'r')
 Lines = file1.readlines()
 
 numValidPassports = 0
-numInvalidPassports = 0
-totalNumberPassports = 0
 
 byr = False
 iyr = False
@@ -13,6 +11,56 @@ hcl = False
 ecl = False
 pid = False
 cid = False
+
+for line in Lines:
+    splitSpace = line.strip().split(' ')
+    for data in splitSpace:
+        splitData = data.strip().split(':')
+        if (splitData[0] == 'byr'):
+            byr = True
+        if (splitData[0] == 'iyr'):
+            iyr = True
+        if (splitData[0] == 'eyr'):
+            eyr = True
+        if (splitData[0] == 'hgt'):
+            hgt = True
+        if (splitData[0] == 'hcl'):
+            hcl = True
+        if (splitData[0] == 'ecl'):
+            ecl = True
+        if (splitData[0] == 'pid'):
+            pid = True
+        if (splitData[0] == 'cid'):
+            cid = True
+
+    if (line.strip() == ""):
+        if (byr == True and iyr == True and eyr == True and hgt == True and hcl == True and ecl == True and pid == True):
+            numValidPassports += 1
+
+        byr = False
+        iyr = False
+        eyr = False
+        hgt = False
+        hcl = False
+        ecl = False
+        pid = False
+        cid = False
+
+if (byr == True and iyr == True and eyr == True and hgt == True and hcl == True and ecl == True and pid == True):
+    numValidPassports += 1
+
+print("Part 1 - Total Number of Valid Passports:", numValidPassports)
+
+byr = False
+iyr = False
+eyr = False
+hgt = False
+hcl = False
+ecl = False
+pid = False
+cid = False
+
+numValidPassports = 0
 
 for line in Lines:
     splitSpace = line.strip().split(' ')
@@ -60,11 +108,8 @@ for line in Lines:
             cid = True
 
     if (line.strip() == ""):
-        totalNumberPassports += 1
         if (byr == True and iyr == True and eyr == True and hgt == True and hcl == True and ecl == True and pid == True):
             numValidPassports += 1
-        if (byr == False or iyr == False or eyr == False or hgt == False or hcl == False or ecl == False or pid == False):
-            numInvalidPassports += 1
 
         byr = False
         iyr = False
@@ -74,14 +119,8 @@ for line in Lines:
         ecl = False
         pid = False
         cid = False
-        # and calculate if passport valid and increase valid number
 
-totalNumberPassports += 1
 if (byr == True and iyr == True and eyr == True and hgt == True and hcl == True and ecl == True and pid == True):
     numValidPassports += 1
-if (byr == False or iyr == False or eyr == False or hgt == False or hcl == False or ecl == False or pid == False):
-    numInvalidPassports += 1
 
-print("Total Number of Passports:", totalNumberPassports)
-print("Total Number of Valid Passports:", numValidPassports)
-print("Total Number of Invalid Passports:", numInvalidPassports)
+print("Part 2 - Total Number of Valid Passports:", numValidPassports)

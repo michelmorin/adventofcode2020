@@ -66,6 +66,6 @@ for r in range(rows):
                 myRow = r
                 myCol = c
 
-print("Highest Seat ID is", highest(arrayID))
+print("Part 1 - Highest Seat ID is", highest(arrayID))
 print("Your Row is", myRow, "your Column is", myCol)
-print("Your Seat ID is", (myRow*8)+myCol)
+print("Part 2 - Your Seat ID is", (myRow*8)+myCol)
