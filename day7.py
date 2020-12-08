@@ -46,7 +46,6 @@ print("Part 1 - Number of Bags that may contain other Shiny Gold Bags:",
 def howManyBagsWithin(colour, numOfBags):
     global totalNumOfBags
     for line in Lines:
-        found = False
         numberOfInnerBagsForOuter = 0
         splitContain = line.strip().split(' bags contain ')
         outerBag = splitContain[0]
