@@ -35,7 +35,6 @@ def findContiguousSum(answer, data):
             array.append(int(data[iterator]))
             if (sum == int(answer)):
                 return min(array) + max(array)
-                break
             else:
                 if (sum > int(answer)):
                     break
